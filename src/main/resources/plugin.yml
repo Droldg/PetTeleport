@@ -1,0 +1,13 @@
+name: PetTeleport_Improved
+main: dk.petteleport.PetTeleportPlugin
+version: '${project.version}'
+api-version: '26.2'
+commands:
+  callpet:
+    description: Teleports your loaded, non-sitting pets to you
+    usage: /<command>
+    permission: petteleport_improved.callpet
+permissions:
+  petteleport_improved.callpet:
+    description: Allows use of /callpet
+    default: true
