@@ -1,6 +1,7 @@
 package dk.petteleport.listener;
 
 import org.bukkit.Location;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Sittable;
 import org.bukkit.entity.Tameable;
 import org.bukkit.event.EventHandler;
@@ -36,6 +37,7 @@ public final class PetTeleportListener implements Listener {
         List<Tameable> pets = event.getFrom().getWorld().getEntitiesByClass(Tameable.class).stream()
                 .filter(Tameable::isTamed)
                 .filter(pet -> pet.getOwner() != null && pet.getOwner().getUniqueId().equals(playerId))
+                .filter(pet -> pet.getType() != EntityType.NAUTILUS)
                 .filter(pet -> !(pet instanceof Sittable sittable) || !sittable.isSitting())
                 .toList();
 

@@ -3,6 +3,7 @@ package dk.petteleport.command;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Sittable;
 import org.bukkit.entity.Tameable;
@@ -25,6 +26,7 @@ public final class CallPetCommand implements CommandExecutor {
             if (pet.isTamed()
                     && pet.getOwner() != null
                     && pet.getOwner().getUniqueId().equals(player.getUniqueId())
+                    && pet.getType() != EntityType.NAUTILUS
                     && (!(pet instanceof Sittable sittable) || !sittable.isSitting())
                     && pet.teleport(player.getLocation())) {
                 teleportedPets++;

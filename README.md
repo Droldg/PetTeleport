@@ -7,6 +7,7 @@ A lightweight Spigot plugin that brings a player's tamed pets along when the pla
 - Supports long-distance teleports in the same world
 - Supports teleports between worlds
 - Moves only pets owned by the teleporting player
+- Leaves tamed Nautilus entities in place
 - Leaves sitting pets in place
 - Provides `/callpet` for manually calling loaded pets
 - Contains no telemetry or bStats integration
