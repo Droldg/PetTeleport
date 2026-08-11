@@ -38,6 +38,7 @@ public final class PetTeleportListener implements Listener {
                 .filter(Tameable::isTamed)
                 .filter(pet -> pet.getOwner() != null && pet.getOwner().getUniqueId().equals(playerId))
                 .filter(pet -> pet.getType() != EntityType.NAUTILUS)
+                .filter(pet -> pet.getType() != EntityType.ZOMBIE_NAUTILUS)
                 .filter(pet -> !(pet instanceof Sittable sittable) || !sittable.isSitting())
                 .toList();
 

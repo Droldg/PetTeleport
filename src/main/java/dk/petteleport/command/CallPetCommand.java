@@ -27,6 +27,7 @@ public final class CallPetCommand implements CommandExecutor {
                     && pet.getOwner() != null
                     && pet.getOwner().getUniqueId().equals(player.getUniqueId())
                     && pet.getType() != EntityType.NAUTILUS
+                    && pet.getType() != EntityType.ZOMBIE_NAUTILUS
                     && (!(pet instanceof Sittable sittable) || !sittable.isSitting())
                     && pet.teleport(player.getLocation())) {
                 teleportedPets++;
